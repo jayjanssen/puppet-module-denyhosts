@@ -1,3 +1,25 @@
 Puppet module for managing denyhosts' (http://denyhosts.sf.net) configuration files.
 
 --- Pawel J. Sawicki <pjs@pjs.name>
+
+
+Usage: 
+
+include denyhosts
+include denyhosts::config
+
+
+
+My iteration of this module has some tweaks to the denyhosts config, and one 
+bugfix that affected me.
+
+- Changed /etc/hosts.deny to 644.  It was 600 in the original version and that
+caused issues for tcp-wrapper daemons not running as root.
+- Purge denyhosts entries older than 1 week by default
+- Skip purge on repeat offenders after 2 times on the bad list
+- Block all services for offenders, not just sshd
+- Sync with the denyhosts.net webservice
+- Get offenders that have been trying for 5 hours or more
+
+I may make more tweaks in the future, but this works for me, maybe it will 
+work for you.
