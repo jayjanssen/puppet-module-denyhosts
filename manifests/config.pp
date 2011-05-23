@@ -17,7 +17,7 @@ class denyhosts::config {
         "/etc/hosts.deny":
             owner => "root",
             group => "root",
-            mode  => 0600,
+            mode  => 0644,
     }
 
     file {
