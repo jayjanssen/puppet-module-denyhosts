@@ -59,10 +59,10 @@ HOSTS_DENY = /etc/hosts.deny
 #            'y' = years
 #
 # never purge:
-PURGE_DENY = 
+#PURGE_DENY = 
 #
 # purge entries older than 1 week
-#PURGE_DENY = 1w
+PURGE_DENY = 1w
 #
 # purge entries older than 5 days
 #PURGE_DENY = 5d
@@ -78,7 +78,7 @@ PURGE_DENY =
 #PURGE_THRESHOLD = 0
 #
 # a denied host will be purged at most 2 times. 
-#PURGE_THRESHOLD = 2 
+PURGE_THRESHOLD = 2 
 #
 #######################################################################
 
@@ -92,9 +92,9 @@ PURGE_DENY =
 # eg.   sshd: 127.0.0.1  # will block sshd logins from 127.0.0.1
 #
 # To block all services for the offending host:
-#BLOCK_SERVICE = ALL
+BLOCK_SERVICE = ALL
 # To block only sshd:
-BLOCK_SERVICE  = sshd
+#BLOCK_SERVICE  = sshd
 # To only record the offending host and nothing else (if using
 # an auxilary file to list the hosts).  Refer to: 
 # http://denyhosts.sourceforge.net/faq.html#aux
@@ -476,7 +476,7 @@ DAEMON_LOG = /var/log/denyhosts
 # http://docs.python.org/lib/node357.html
 #
 # This is the default:
-#DAEMON_LOG_MESSAGE_FORMAT = %(asctime)s - %(name)-12s: %(levelname)-8s %(message)s
+DAEMON_LOG_MESSAGE_FORMAT = %(asctime)s - %(name)-12s: %(levelname)-8s %(message)s
 #
 #
 ###################################################################### 
@@ -534,7 +534,7 @@ DAEMON_PURGE = 1h
 # To disable synchronization (the default), do nothing. 
 #
 # To enable synchronization, you must uncomment the following line:
-#SYNC_SERVER = http://xmlrpc.denyhosts.net:9911
+SYNC_SERVER = http://xmlrpc.denyhosts.net:9911
 #
 #######################################################################
 
@@ -543,7 +543,7 @@ DAEMON_PURGE = 1h
 # SYNC_INTERVAL: the interval of time to perform synchronizations if
 # SYNC_SERVER has been uncommented.  The default is 1 hour.
 # 
-#SYNC_INTERVAL = 1h
+SYNC_INTERVAL = 1h
 #
 #######################################################################
 
@@ -556,7 +556,7 @@ DAEMON_PURGE = 1h
 # The default is SYNC_UPLOAD = yes
 #
 #SYNC_UPLOAD = no
-#SYNC_UPLOAD = yes
+SYNC_UPLOAD = yes
 #
 #######################################################################
 
@@ -569,7 +569,7 @@ DAEMON_PURGE = 1h
 # The default is SYNC_DOWNLOAD = yes
 #
 #SYNC_DOWNLOAD = no
-#SYNC_DOWNLOAD = yes
+SYNC_DOWNLOAD = yes
 #
 #
 #
@@ -588,7 +588,7 @@ DAEMON_PURGE = 1h
 #
 # The default is SYNC_DOWNLOAD_THRESHOLD = 3 
 #
-#SYNC_DOWNLOAD_THRESHOLD = 3
+SYNC_DOWNLOAD_THRESHOLD = 3
 #
 #######################################################################
 
@@ -618,7 +618,7 @@ DAEMON_PURGE = 1h
 #SYNC_DOWNLOAD_RESILIENCY = 2d
 #
 # Only obtain hackers that have been at it for 5 hours or more:
-#SYNC_DOWNLOAD_RESILIENCY = 5h
+SYNC_DOWNLOAD_RESILIENCY = 5h
 #
 #######################################################################
 
