@@ -26,6 +26,7 @@ class denyhosts::config {
             owner  => "root",
             group  => "root",
             mode   => 0600,
+            require => Package['denyhosts'];
     }
 
     file {
@@ -35,6 +36,7 @@ class denyhosts::config {
             group   => "root",
             mode    => 0600,
             notify  => Service[denyhosts],
+            require => Package['denyhosts'];
     }
 
     realize Service[denyhosts]
